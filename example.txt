@@ -1,0 +1,16 @@
+|---------------------------------------------|
+| *     * **** *    ****   ***  *     * ****  |
+| *     * *    *    *     *   * * * * * *     |
+| *  *  * **** *    *     *   * *  *  * ****  |
+|  *   *  *    *    *     *   * *     * *     |
+|   * *   **** **** ****   ***  *     * ****  |
+|---------------------------------------------|
+|                    MENU                     |
+|        1.Reserve a room for 1 person        |
+|        2.Reserve a room for 2 person        |
+|        3.Reserve a room for 3 person        |
+|        4.Show the current status of rooms   |
+|        5.Cancle reserveed room              |
+|        6.Change the name                    |
+|        7.Change the room                    |
+|---------------------------------------------|
