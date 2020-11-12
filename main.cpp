@@ -29,12 +29,20 @@ int main() {
         cin >> key;
         switch (key) {
         case 1: {
+            obj.reserve(1);
+            break;
         }
         case 2: {
+            obj.reserve(2);
+            break;
         }
         case 3: {
+            obj.reserve(3);
+            break;
         }
         case 4: {
+            obj.display();
+            break;
         }
         case 5: {
         }

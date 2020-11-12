@@ -17,6 +17,7 @@ class StudyRoom {
     StudyRoom();
     void create();
     void display();
+    void reserve(int people);
 };
 
 #endif
