@@ -90,3 +90,56 @@ void StudyRoom::display() {
         tn = tn->next;
     }
 }
+void StudyRoom::reserve(int people) {
+    int zone, room;
+    cout << "\nEnter the zone number : ";
+    cin >> zone;
+    try {
+        if (zone < 0 || zone > 4)
+
+        {
+            throw(zone);
+        }
+        cn = header[zone - 1];
+
+        cout << "\nEnter the room number : ";
+        cin >> room;
+        try {
+
+            if (room < 0 || room > 10) {
+                throw(room);
+            } else {
+                int i = 1;
+                while (i < room) {
+                    cn = cn->next;
+                    i++;
+                }
+                if (cn->num >= people) {
+                    cout << "\nroom is available & you can reserve the room";
+
+                    int count = 0;
+                    while (cn->fill - 1 <= cn->num) {
+
+                        cout << "\nEnter the name " << cn->fill + 1 << " : ";
+
+                        cin >> cn->name[cn->fill];
+                        count++;
+                        cn->fill++;
+                        if (count >= people) {
+                            break;
+                        }
+                    }
+                    cn->num = cn->num - people;
+                }
+
+                else {
+                    cout << "\nroom is unavailable... SORRY !!!!!";
+                }
+            }
+        } catch (int r) {
+            cout << "\ninvalid room number : " << r;
+        }
+    } catch (int r) {
+        cout << " \ninvalid zone number : " << r;
+    }
+}
