@@ -14,7 +14,7 @@ int main() {
     obj.create();
     do {
         string line;
-        ifstream myfile("example.txt");
+        ifstream myfile("menu.txt");
         if (myfile.is_open()) {
             while (getline(myfile, line)) {
                 cout << line << '\n';
