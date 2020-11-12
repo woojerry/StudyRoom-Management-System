@@ -53,7 +53,7 @@ void StudyRoom::display() {
         if (cn->fill != cn->num && cn->num != 0) {
             j++;
             cout << "| room no : " << j;
-            cout << "->Number of place->" << cn->num;
+            cout << "-> " << cn->num << " available seat(s)";
         } else {
             j++;
             cout << "| room no : " << j;
@@ -63,7 +63,7 @@ void StudyRoom::display() {
         if (sn->fill != sn->num && sn->num != 0) {
             k++;
             cout << "\t | room no : " << j;
-            cout << "->Number of place->" << sn->num;
+            cout << "-> " << cn->num << " available seat(s)";
         } else {
             k++;
             cout << " \t | room no : " << j;
@@ -73,7 +73,7 @@ void StudyRoom::display() {
         if (tn->fill != tn->num && tn->num != 0) {
             l++;
             cout << "\t | room no : " << j;
-            cout << "->Number of place->" << tn->num << "| ";
+            cout << "-> " << cn->num << " available seat(s)";
         } else {
             l++;
             cout << "\t | room no : " << j;
