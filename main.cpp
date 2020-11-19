@@ -10,6 +10,7 @@ int main() {
     StudyRoom obj;
     int key;
     char ch;
+    int zonecheck;
 
     obj.create();
     do {
@@ -45,6 +46,9 @@ int main() {
             break;
         }
         case 5: {
+            cout << "Enter zone number : ";
+            cin >> zonecheck;
+            obj.cancel(zonecheck);
         }
         case 6: {
         }

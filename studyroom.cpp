@@ -57,27 +57,27 @@ void StudyRoom::display() {
         } else {
             j++;
             cout << "| room no : " << j;
-            cout << "->Reserved "
+            cout << "->Full \t"
                  << "\t";
         }
         if (sn->fill != sn->num && sn->num != 0) {
             k++;
             cout << "\t | room no : " << j;
-            cout << "-> " << cn->num << " available seat(s)";
+            cout << "-> " << sn->num << " available seat(s)";
         } else {
             k++;
             cout << " \t | room no : " << j;
-            cout << "->Reserved "
+            cout << "->Full \t"
                  << "\t";
         }
         if (tn->fill != tn->num && tn->num != 0) {
             l++;
             cout << "\t | room no : " << j;
-            cout << "-> " << cn->num << " available seat(s)";
+            cout << "-> " << tn->num << " available seat(s)";
         } else {
             l++;
             cout << "\t | room no : " << j;
-            cout << "->Reserved "
+            cout << "->Full \t"
                  << " | ";
         }
         cout << " \n ";
@@ -95,7 +95,7 @@ void StudyRoom::reserve(int people) {
     cout << "\nEnter the zone number : ";
     cin >> zone;
     try {
-        if (zone < 0 || zone > 4)
+        if (zone < 1 || zone > 3)
 
         {
             throw(zone);
@@ -106,7 +106,7 @@ void StudyRoom::reserve(int people) {
         cin >> room;
         try {
 
-            if (room < 0 || room > 10) {
+            if (room < 1 || room > 9) {
                 throw(room);
             } else {
                 int i = 1;
@@ -141,5 +141,65 @@ void StudyRoom::reserve(int people) {
         }
     } catch (int r) {
         cout << " \ninvalid zone number : " << r;
+    }
+}
+void StudyRoom::cancel(int check) {
+    char namecheck[10];
+    int flag = 0;
+    int room, i = 1;
+    try {
+        if (check < 1 || check > 3)
+
+        {
+            throw(check);
+        } else {
+            cout << " Enter the room no : ";
+            cin >> room;
+            try {
+                if (room < 1 || room > 9) {
+                    throw(room);
+                } else {
+                    cout << " Enter the name to be deleted "
+                            ":";
+
+                    cin >> namecheck;
+                    cn = header[check - 1];
+                    while (i < room) {
+                        cn = cn->next;
+                        i++;
+                    }
+                    i = 0;
+                    while (i < 3) {
+
+                        if (!strcmp(namecheck, cn->name[i]))
+
+                        {
+                            flag = 1;
+                            break;
+                            i = 0;
+                        } else
+                            i++;
+                    }
+                    if (flag == 1 && cn->fill != 0) {
+                        cout << "\nrecord deleted : " << cn->name[i];
+
+                        cn->name[i][0] = 'A';
+                        cn->name[i][1] = '\0';
+                        cn->fill--;
+                        cn->num++;
+                    } else
+
+                        cout << "\nrecord not Reserved ";
+                }
+            } catch (int r) {
+                cout << "\ninvalid room number : " << r;
+            }
+        }
+    }
+
+    catch (int r)
+
+    {
+        cout << " \n zone doesn't exist : " << r;
     }
 }
