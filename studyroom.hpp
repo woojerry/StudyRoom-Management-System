@@ -19,6 +19,7 @@ class StudyRoom {
     void display();
     void reserve(int people);
     void cancel(int check);
+    void changeName(int check);
 };
 
 #endif
