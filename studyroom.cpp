@@ -33,7 +33,7 @@ void StudyRoom::create() {
     }
 }
 void StudyRoom::display() {
-    int j = 0, k = 0, l = 0;
+    int j = 0;
     for (int i = 0; i < 58; i++) {
         cout << "--";
     }
@@ -61,21 +61,21 @@ void StudyRoom::display() {
                  << "\t";
         }
         if (sn->fill != sn->num && sn->num != 0) {
-            k++;
+
             cout << "\t | room no : " << j;
             cout << "-> " << sn->num << " available seat(s)";
         } else {
-            k++;
+
             cout << " \t | room no : " << j;
             cout << "->Full \t"
                  << "\t";
         }
         if (tn->fill != tn->num && tn->num != 0) {
-            l++;
+
             cout << "\t | room no : " << j;
             cout << "-> " << tn->num << " available seat(s)";
         } else {
-            l++;
+
             cout << "\t | room no : " << j;
             cout << "->Full \t"
                  << " | ";
@@ -201,5 +201,62 @@ void StudyRoom::cancel(int check) {
 
     {
         cout << " \n zone doesn't exist : " << r;
+    }
+}
+
+void StudyRoom::changeName(int check) {
+    char namecheck[10];
+    int room, i = 1;
+    try {
+        if (check < 0 || check > 4)
+
+        {
+            throw(check);
+        } else {
+            cout << " Enter the room no : ";
+            cin >> room;
+            try {
+                if (room < 0 || room > 10)
+
+                {
+                    throw(room);
+                } else {
+                    cout << "Enter the name to be edited :";
+
+                    cin >> namecheck;
+                    cn = header[check - 1];
+                    while (i < room) {
+                        cn = cn->next;
+                        i++;
+                    }
+                    i = 0;
+                    while (i < 3) {
+                        if (!strcmp(namecheck, cn->name[i]))
+
+                        {
+                            cout << "\nenter new name : ";
+
+                            cin >> cn->name[i];
+                            break;
+                        } else
+                            i++;
+                    }
+                    if (i >= 3)
+                        cout << "record not found ";
+                    else {
+                        cout << "\nrecord edited\nprevious name : " << namecheck
+                             << "\nedited name : " << cn->name[i];
+                    }
+                }
+            } catch (int r) {
+                cout << "\ninvalid room number : " << r;
+            }
+        }
+    }
+
+    catch (int r)
+
+    {
+        cout << "\n floor dosn't exist : " << r;
     }
 }
