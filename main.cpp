@@ -54,7 +54,7 @@ void login() {
     cout << "PASSWORD :";
     cin >> pass;
 
-    ifstream input("database.txt");
+    ifstream input("database.txt"); // 파일열기
     while (input >> u >> p) {
         if (u == user && p == pass)
 
@@ -78,13 +78,13 @@ void login() {
 void registr() {
 
     string reguser, regpass, ru, rp;
-    system("clear");
+    system("clear"); // 화면 지워주기
     cout << "Enter the username :";
     cin >> reguser;
     cout << "\nEnter the password :";
     cin >> regpass;
 
-    ofstream reg("database.txt", ios::app);
+    ofstream reg("database.txt", ios::app); // 파일 쓰기 없으면 생성
     reg << reguser << ' ' << regpass << endl;
     system("clear");
     cout << "\nRegistration Sucessful\n";

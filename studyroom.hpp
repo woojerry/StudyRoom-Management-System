@@ -3,11 +3,10 @@
 #include <string.h>
 
 struct node {
-    int num = 1;
-    int fill = 0;
+    int num = 1;  // study room 몇인용인지 할당하기 위한 변수
+    int fill = 0; // study room 꽉차있는지
     char name[3][10];
     node *next;
-    node *prev;
 };
 class StudyRoom {
     node *header[3];
