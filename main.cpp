@@ -149,7 +149,8 @@ void start() {
             break;
         }
         case 8: {
-            cout << "Thank you! See you again in StudyRoom!";
+            cout << "Thank you! See you again in StudyRoom!" << endl;
+            exit(0);
             break;
         }
         default:

@@ -13,4 +13,5 @@
 |                5.Cancel reserved room                      |
 |                6.Change the name                           |
 |                7.Change the room                           |
+|                8.Exit                                      |
 |------------------------------------------------------------|
