@@ -94,7 +94,7 @@ void start() {
     StudyRoom obj;
     int key;
     char ch;
-    int floorcheck;
+    int zonecheck;
     int num = 1;
     obj.create();
     do {
@@ -130,21 +130,21 @@ void start() {
             break;
         }
         case 5: {
-            cout << "Enter floor number : ";
-            cin >> floorcheck;
-            obj.cancel(floorcheck);
+            cout << "Enter zone number : ";
+            cin >> zonecheck;
+            obj.cancel(zonecheck);
             break;
         }
         case 6: {
-            cout << "Enter floor number : ";
-            cin >> floorcheck;
-            obj.changeName(floorcheck);
+            cout << "Enter zone number : ";
+            cin >> zonecheck;
+            obj.changeName(zonecheck);
             break;
         }
         case 7: {
-            cout << "Enter floor number : ";
-            cin >> floorcheck;
-            obj.cancel(floorcheck);
+            cout << "Enter zone number : ";
+            cin >> zonecheck;
+            obj.cancel(zonecheck);
             obj.reserve(num);
             break;
         }

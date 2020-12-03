@@ -255,6 +255,6 @@ void StudyRoom::changeName(int check) {
     catch (int r)
 
     {
-        cout << "\n floor dosn't exist : " << r;
+        cout << "\n zone dosn't exist : " << r;
     }
 }
